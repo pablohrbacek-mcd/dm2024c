@@ -33,7 +33,7 @@ PARAM$hs <- makeParamSet(
     makeIntegerParam("maxdepth", lower = 3L, upper = 20L),
     forbidden = quote(minbucket > 0.5 * minsplit)
 )
-# minbuket NO PUEDE ser mayor que la mitad de minsplit
+# minbuket NO PUEDE ser mayor que la mitad de minsplit. Por que el menor de los hijos puede ser hasta la mitad del padre.
 
 
 #------------------------------------------------------------------------------
@@ -278,5 +278,5 @@ system( "~/install/repobrutalcopy.sh" )
 
 # apago la virtual machine  para que no facture Google Cloud
 # Give them nothing, but take from them everything.
-system( "~/install/apagar-vm.sh" )
+#system( "~/install/apagar-vm.sh" )
 
