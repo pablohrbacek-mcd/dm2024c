@@ -10,12 +10,12 @@ require("ggplot2")
 
 PARAM <- list()
 # reemplazar por las propias semillas
-PARAM$semilla_primigenia <- 102191
+PARAM$semilla_primigenia <- 101383
 PARAM$qsemillas <- 10000
 
 # elegir SU dataset comentando/ descomentando
-PARAM$dataset_nom <- "~/datasets/vivencial_dataset_pequeno.csv"
-# PARAM$dataset_nom <- "~/datasets/conceptual_dataset_pequeno.csv"
+#PARAM$dataset_nom <- "~/datasets/vivencial_dataset_pequeno.csv"
+PARAM$dataset_nom <- "~/datasets/conceptual_dataset_pequeno.csv"
 
 PARAM$training_pct <- 70L  # entre  1L y 99L 
 
