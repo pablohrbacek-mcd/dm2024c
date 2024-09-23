@@ -52,9 +52,14 @@ PARAM$hyperparametertuning$NEG_ganancia <- -3000
 hs <- makeParamSet(
   makeNumericParam("learning_rate", lower = 0.01, upper = 0.3),
   makeIntegerParam("num_leaves", lower = 8L, upper = 1024L),
-  makeNumericParam("feature_fraction", lower = 0.1, upper = 1.0),
-  makeIntegerParam("min_data_in_leaf", lower = 1L, upper = 8000L),
-  makeIntegerParam("envios", lower = 5000L, upper = 15000L)
+  makeNumericParam("feature_fraction", lower = 0.5, upper = 0.8), #0.5 a 0.8
+  makeIntegerParam("min_data_in_leaf", lower = 100L, upper = 3000L), #100 a 3000
+  makeIntegerParam("envios", lower = 5000L, upper = 15000L),
+  #Personalizadas
+  makeIntegerParam("max_depth", lower = 3L, upper = 12L),
+  makeIntegerParam("n_estimators", lower = 10L, upper = 100L),
+  makeNumericParam("bagging_fraction", lower = 0.4, upper = 0.6)#,
+  #makeIntegerParam("early_stopping_rounds", lower = 30, upper = 50)
 )
 
 #------------------------------------------------------------------------------

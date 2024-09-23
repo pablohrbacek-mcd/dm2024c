@@ -181,5 +181,5 @@ system( "~/install/repobrutalcopy.sh" )
 
 # apago la virtual machine  para que no facture Google Cloud
 # Give them nothing, but take from them everything.
-system( "~/install/apagar-vm.sh" )
+# system( "~/install/apagar-vm.sh" )
 
