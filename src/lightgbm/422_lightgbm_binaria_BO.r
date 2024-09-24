@@ -33,7 +33,7 @@ options(error = function() {
 #  muy pronto esto se leera desde un archivo formato .yaml
 PARAM <- list()
 
-PARAM$experimento <- "HT4220"
+PARAM$experimento <- "HT4221"
 
 PARAM$input$training <- c(202107) # los meses en los que vamos a entrenar
 
@@ -58,7 +58,9 @@ hs <- makeParamSet(
   #Personalizadas
   makeIntegerParam("n_estimators", lower = 10L, upper = 100L),
   makeNumericParam("bagging_fraction", lower = 0.4, upper = 0.6),
-  makeNumericParam("min_gain_to_split", lower = 0.1, upper = 0.5)
+  makeNumericParam("min_gain_to_split", lower = 0.1, upper = 1.0),
+  makeNumericParam("lambda_l1", lower = 0.0, upper = 10.0),
+  makeNumericParam("lambda_l2", lower = 0.0, upper = 10.0)
 )
 
 #------------------------------------------------------------------------------
