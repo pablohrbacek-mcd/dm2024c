@@ -54,12 +54,11 @@ hs <- makeParamSet(
   makeIntegerParam("num_leaves", lower = 8L, upper = 1024L),
   makeNumericParam("feature_fraction", lower = 0.5, upper = 0.8), #0.5 a 0.8
   makeIntegerParam("min_data_in_leaf", lower = 100L, upper = 3000L), #100 a 3000
-  makeIntegerParam("envios", lower = 5000L, upper = 15000L),
+  makeIntegerParam("envios", lower = 0L, upper = 5000L),
   #Personalizadas
-  makeIntegerParam("max_depth", lower = 3L, upper = 12L),
   makeIntegerParam("n_estimators", lower = 10L, upper = 100L),
-  makeNumericParam("bagging_fraction", lower = 0.4, upper = 0.6)#,
-  #makeIntegerParam("early_stopping_rounds", lower = 30, upper = 50)
+  makeNumericParam("bagging_fraction", lower = 0.4, upper = 0.6),
+  makeNumericParam("min_gain_to_split", lower = 0.1, upper = 0.5)
 )
 
 #------------------------------------------------------------------------------
