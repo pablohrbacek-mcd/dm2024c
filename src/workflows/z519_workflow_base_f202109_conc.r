@@ -88,7 +88,7 @@ CA_catastrophe_base <- function( pinputexps, metodo )
 {
   if( -1 == (param_local <- exp_init())$resultado ) return( 0 ) # linea fija
 
-  param_local$meta$script <- "/src/wf-etapas/z1201_CA_reparar_dataset.r"
+  param_local$meta$script <- "/src/wf-etapas/1201_CA_reparar_dataset.r"
 
   # Opciones MachineLearning EstadisticaClasica Ninguno
   param_local$metodo <- metodo
@@ -427,7 +427,7 @@ wf_septiembre <- function( pnombrewf )
   param_local <- exp_wf_init( pnombrewf ) # linea fija
 
   DT_incorporar_dataset_competencia2024()
-  CA_catastrophe_base( metodo="MICE")
+  CA_catastrophe_base( metodo="spline3")
   FEintra_manual_base()
   DR_drifting_base(metodo="rank_cero_fijo")
   FEhist_base()
@@ -437,7 +437,7 @@ wf_septiembre <- function( pnombrewf )
   ts9 <- TS_strategy_base9()
   ht <- HT_tuning_base()
 
-  fm <- FM_final_models_lightgbm( c(ht, ts9), ranks=c(1), qsemillas=10 )
+  fm <- FM_final_models_lightgbm( c(ht, ts9), ranks=c(1), qsemillas=5 )
   SC_scoring( c(fm, ts9) )
   KA_evaluate_kaggle()
 
