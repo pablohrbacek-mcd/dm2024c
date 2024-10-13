@@ -437,7 +437,7 @@ wf_septiembre <- function( pnombrewf )
   ts9 <- TS_strategy_base9()
   ht <- HT_tuning_base()
 
-  fm <- FM_final_models_lightgbm( c(ht, ts9), ranks=c(1), qsemillas=5 )
+  fm <- FM_final_models_lightgbm( c(ht, ts9), ranks=c(1), qsemillas=15 )
   SC_scoring( c(fm, ts9) )
   KA_evaluate_kaggle()
 
